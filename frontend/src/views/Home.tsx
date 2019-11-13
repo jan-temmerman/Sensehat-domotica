@@ -16,7 +16,12 @@ const Home = () => {
     const [alarm, setAlarm] = useState("rgb(145, 56, 56)");
     const [alarmRunning, setAlarmRunning] = useState(false);
     const [alarmToggler, setAlarmToggler] = useState(false);
+    const [humidity, setHumidity] = useState(0);
+    const [temp, setTemp] = useState(0);
 
+    useEffect(() => {
+        getData(setHumidity, setTemp)
+    }, [])
 
     useEffect(() => {
         runAlarmProcess(alarmRunning, alarmToggler, setAlarmToggler)
@@ -33,8 +38,8 @@ const Home = () => {
                 <h1>Sensors</h1>
                 <div className={styles.seperator}/>
                 <div className={styles.cardsCluster}>
-                    <SensorCard sensorValue={10.02} name={"Humidity"} unit={'%'} maxValue={100} />
-                    <SensorCard sensorValue={32.42} name={"Temperature"} unit={'°'} maxValue={50} />
+                    <SensorCard sensorValue={humidity} name={"Humidity"} unit={'%'} maxValue={100} />
+                    <SensorCard sensorValue={temp} name={"Temperature"} unit={'°'} maxValue={50} />
                 </div>
             </div>
             <div className={styles.groupContainerSmall}>
@@ -65,6 +70,26 @@ const Home = () => {
         </div>
         
     )
+}
+
+const getData = (setHumidity: any, setTemp: any) => {
+    let sensorsRef = db.collection('domotica').doc('sensors');
+    sensorsRef.get()
+    .then(doc => {
+        if (!doc.exists) {
+        console.log('No such document!');
+        } else {
+            setHumidity(doc.data().humidity.toFixed(2))
+            setTemp(doc.data().temp.toFixed(2))
+        }
+    })
+    .catch(err => {
+        console.log('Error getting document', err);
+    });
+
+    setTimeout(function() {
+        getData(setHumidity, setTemp)
+    }, 1000)
 }
 
 const runAlarmProcess = (alarmRunning: boolean, alarmToggler: boolean, setAlarmToggler: any) => {
