@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import * as firebase from 'firebase'
 
 // Style
 import styles from '../css/home.module.css'
@@ -21,6 +22,7 @@ const Home = () => {
 
     useEffect(() => {
         getData(setHumidity, setTemp)
+        createUser('jantemm@gmail.com', '88FG4HK3')
     }, [])
 
     useEffect(() => {
@@ -70,6 +72,16 @@ const Home = () => {
         </div>
         
     )
+}
+
+const createUser = (email: string, password: string) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(`${errorCode}: ${errorMessage}`)
+        // ...
+    });
 }
 
 const getData = (setHumidity: any, setTemp: any) => {

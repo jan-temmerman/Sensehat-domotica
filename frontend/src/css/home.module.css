@@ -42,3 +42,15 @@
     font-weight: 700;
     cursor: pointer;
 }
+
+.nav {
+    display: flex;
+    position: absolute;
+    background-color: tomato;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+    z-index: 3;
+    justify-content: space-around;
+    align-items: center;
+}
