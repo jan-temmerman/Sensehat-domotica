@@ -1,15 +1,13 @@
 .button {
     width: 100%;
     height: 100%;
-    background-color: rgb(66, 90, 112);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 2px;
-}
-
-.button:hover {
-    background-color: rgb(82, 143, 199);
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .container {
