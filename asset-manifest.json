@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/rSensehat-domotica/static/css/main.fa6f1d83.chunk.css",
+    "main.js": "/rSensehat-domotica/static/js/main.18b4853a.chunk.js",
+    "main.js.map": "/rSensehat-domotica/static/js/main.18b4853a.chunk.js.map",
+    "runtime-main.js": "/rSensehat-domotica/static/js/runtime-main.6e759dd3.js",
+    "runtime-main.js.map": "/rSensehat-domotica/static/js/runtime-main.6e759dd3.js.map",
+    "static/css/2.09ae8418.chunk.css": "/rSensehat-domotica/static/css/2.09ae8418.chunk.css",
+    "static/js/2.d6c476f8.chunk.js": "/rSensehat-domotica/static/js/2.d6c476f8.chunk.js",
+    "static/js/2.d6c476f8.chunk.js.map": "/rSensehat-domotica/static/js/2.d6c476f8.chunk.js.map",
+    "index.html": "/rSensehat-domotica/index.html",
+    "precache-manifest.c9044e79684041497d1d835b941d0c8d.js": "/rSensehat-domotica/precache-manifest.c9044e79684041497d1d835b941d0c8d.js",
+    "service-worker.js": "/rSensehat-domotica/service-worker.js",
+    "static/css/2.09ae8418.chunk.css.map": "/rSensehat-domotica/static/css/2.09ae8418.chunk.css.map",
+    "static/css/main.fa6f1d83.chunk.css.map": "/rSensehat-domotica/static/css/main.fa6f1d83.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e759dd3.js",
+    "static/css/2.09ae8418.chunk.css",
+    "static/js/2.d6c476f8.chunk.js",
+    "static/css/main.fa6f1d83.chunk.css",
+    "static/js/main.18b4853a.chunk.js"
+  ]
+}
